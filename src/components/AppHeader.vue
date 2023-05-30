@@ -1,14 +1,13 @@
 <script>
+import { router } from '../router';
+
 
 export default {
-    name: 'AppHeader',
-
+    name: "AppHeader",
     data() {
-        return {
-
-        }
+        return {};
     },
-
+    components: { router }
 }
 </script>
 
@@ -17,8 +16,10 @@ export default {
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <img src="https://static-00.iconduck.com/assets.00/adobe-portfolio-icon-512x512-mfisumyd.png"
-                    alt="immagine logo" class="logo-img">
+                <div class="container-logo">
+                    <img src="https://static-00.iconduck.com/assets.00/adobe-portfolio-icon-512x512-mfisumyd.png"
+                        alt="immagine logo" class="logo-img">
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -27,27 +28,13 @@ export default {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <router-link class="nav-link" aria-current="page" :to="{ name: 'home' }">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <router-link class="nav-link" :to="{ name: 'index' }">I miei progetti</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <router-link class="nav-link" :to="{ name: 'about' }">Contattami</router-link>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -71,6 +58,11 @@ export default {
 
     .container-fluid {
         height: 80px;
+
+        .container-logo {
+            height: 50px;
+            margin-left: 30px;
+        }
 
         .logo-img {
             height: 100%;
