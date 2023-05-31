@@ -49,6 +49,10 @@ export default {
 
 
 <style lang="scss" scoped>
+.router-link-active {
+    color: #ffffff;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -66,7 +70,7 @@ export default {
 
         .logo-img {
             height: 100%;
-            margin-right: 50px;
+            margin-right: 30px;
         }
     }
 }

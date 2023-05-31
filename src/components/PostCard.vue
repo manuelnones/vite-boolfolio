@@ -40,7 +40,8 @@ export default {
                     :style="{ backgroundColor: technology.color }">{{ technology.name }}</span>
             </div>
             <p class="card-text pt-4">{{ post.content }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <router-link :to="{ name: 'show', params: { slug: post.slug } }" class="btn btn-outline-light">Vai al
+                post</router-link>
         </div>
     </div>
 </template>

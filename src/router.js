@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from './pages/AppHome.vue';
 import AppAbout from './pages/AppAbout.vue';
 import AppIndex from './pages/AppIndex.vue';
+import AppShow from './pages/AppShow.vue';
 
 
 const router = createRouter({
@@ -14,15 +15,20 @@ const router = createRouter({
             component: AppHome,
         },
         {
-            path: '/about',
+            path: '/contact',
             name: 'about',
             component: AppAbout,
         },
         {
-            path: '/index',
+            path: '/posts',
             name: 'index',
             component: AppIndex,
         },
+        {
+            path: '/posts/:slug',
+            name: 'show',
+            component: AppShow,
+        }
     ]
 });
 
